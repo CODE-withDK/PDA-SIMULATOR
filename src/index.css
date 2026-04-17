@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lexend", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-acid: #CCFF00;
+  --color-matte-black: #0A0A0A;
+  --color-surface: #1A1A1A;
+  --color-pure-white: #FFFFFF;
+  --color-text-dim: #888888;
+}
+
+@layer base {
+  body {
+    @apply bg-matte-black text-pure-white font-sans antialiased selection:bg-acid selection:text-matte-black;
+  }
+}
+
+@layer components {
+  .neo-blob {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  
+  .neo-glass {
+    @apply bg-surface backdrop-blur-xl border border-white/10;
+  }
+  
+  .neo-shadow {
+    box-shadow: 0 0 30px rgba(204, 255, 0, 0.15);
+  }
+
+  .asym-panel {
+    border-radius: 30px 10px 30px 10px;
+  }
+
+  .vibrant-btn {
+    @apply px-8 py-3 rounded-xl border border-acid text-acid font-bold uppercase tracking-widest transition-all hover:bg-acid hover:text-matte-black cursor-pointer;
+  }
+
+  .vibrant-btn-main {
+    @apply bg-acid text-matte-black px-8 py-3 rounded-xl font-bold uppercase tracking-widest hover:scale-105 transition-transform cursor-pointer;
+  }
+}
